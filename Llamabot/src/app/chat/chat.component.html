@@ -1,15 +1,28 @@
-
 <div class="chat-container">
-    <h1>Chatbot</h1>
-    <div class="chat-box">
-      <div>
-        <input [(ngModel)]="userInput" placeholder="Type your message">
-        <button (click)="sendMessage()">Send</button>
+  <!-- Chat Header -->
+  <div class="chat-header">
+    <h2>Chat</h2>
+    <a href="#" class="reset-chat">Reset Chat</a>
+  </div>
+
+  <!-- Chat Messages -->
+  <div class="chat-messages">
+    <div class="user-message" *ngFor="let message of messages">
+      <div [class]="message.role === 'user' ? 'message user' : 'message assistant'" 
+           [innerHTML]="message.content">
       </div>
-    </div>
-    <div *ngIf="response">
-      <h3>Response:</h3>
-      <p>{{ response }}</p>
     </div>
   </div>
   
+
+  <!-- Input Area -->
+  <div class="chat-input">
+    <input
+      type="text"
+      placeholder="Type text here..."
+      [(ngModel)]="userInput"
+      (keyup.enter)="sendMessage()"
+    />
+    <button (click)="sendMessage()">Send</button>
+  </div>
+</div>
