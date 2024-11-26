@@ -1,5 +1,5 @@
 .chat-container {
-  max-width: 500px;
+  max-width: 70%;
   margin: auto;
   border: 1px solid #333;
   border-radius: 8px;
@@ -29,7 +29,7 @@
 .message {
   padding: 10px;
   border-radius: 8px;
-  max-width: 80%;
+  max-width: 50%;
 }
 
 .user {
